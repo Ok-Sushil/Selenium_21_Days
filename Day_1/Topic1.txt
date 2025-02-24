@@ -1,0 +1,62 @@
+Topic 1: Selenium WebDriver Overview & Setup
+Subtopic a: What is Selenium?
+-------------------------------------------------------------------------------------------------------------------------
+🔹 Selenium is an open-source automation testing tool used to automate web applications.
+🔹 Selenium WebDriver is the main component that interacts with web browsers like Chrome, Firefox, Edge, Safari, etc.
+🔹 Why use Selenium?
+
+Automates web testing without manual effort.
+Works with multiple programming languages (Java, Python, C#).
+Supports different browsers.
+✅ Role of Selenium WebDriver:
+
+Opens and controls browsers.
+Finds and interacts with web elements (buttons, links, input fields, etc.).
+Automates form filling, clicking buttons, scrolling pages, etc.
+
+Subtopic b: Browser Drivers Setup (ChromeDriver & GeckoDriver)
+------------------------------------------------------------------------------------------------------------------------
+Selenium needs Browser Drivers to interact with web browsers.
+
+🔹 ChromeDriver Setup (For Chrome Browser)
+
+Download ChromeDriver from here.
+Select the version that matches your Chrome version.
+Extract the file and place it in a known folder (e.g., C:\webdriver\chromedriver.exe).
+🔹 GeckoDriver Setup (For Firefox Browser)
+
+Download GeckoDriver from here.
+Extract the file and place it in a known folder (e.g., C:\webdriver\geckodriver.exe).
+✅ Setting Up the Driver in Code:
+
+System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+
+System.setProperty("webdriver.gecko.driver", "C:\\webdriver\\geckodriver.exe");
+WebDriver driver = new FirefoxDriver();
+
+
+
+Subtopic c: Environment Setup – Creating a Selenium Project
+--------------------------------------------------------------------------------------------------------------------------------------
+✅ Step 1: Install Java & IDE (Already Done 🎉)
+✅ Step 2: Add Selenium JARs or Dependencies
+
+🔹 If Using Maven (Recommended in IntelliJ/Eclipse):
+
+Create a Maven Project in Eclipse/IntelliJ.
+Open pom.xml and add these dependencies:
+xml
+<dependencies>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.8.0</version>
+    </dependency>
+</dependencies>
+Save and wait for Maven to download the required JAR files.
+🔹 If Using Eclipse Without Maven:
+
+Download Selenium Java Client from Selenium Downloads.
+Extract the ZIP and add all JARs to the project build path.
+✅ Now the Selenium environment is ready! 🎉
