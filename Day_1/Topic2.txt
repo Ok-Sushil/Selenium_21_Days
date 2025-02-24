@@ -1,5 +1,6 @@
 Topic 2: Basic Commands & Element Locators
 Subtopic a: Browser Launch & URL Navigation
+------------------------------------------------------------------
 🔹 Example: Opening a browser and navigating to Google
 
 
@@ -32,7 +33,11 @@ WebDriver driver = new ChromeDriver(); → Opens Chrome browser.
 driver.get("URL"); → Opens the specified website.
 driver.getTitle(); → Retrieves the page title.
 driver.quit(); → Closes the browser.
+
+
+
 Subtopic b: Element Locators – ID, Name, ClassName
+-----------------------------------------------------------------------------
 Selenium needs locators to find elements on a webpage.
 
 🔹 Basic Locators in Selenium:
@@ -72,7 +77,12 @@ public class LocatorsExample {
 
 findElement(By.id("username")) → Finds an input field using ID.
 sendKeys("testuser") → Enters text into the input field.
+
+
+
+
 Subtopic c: Introduction to XPath & CSS Selectors
+---------------------------------------------------------------------------------------------------------------
 🔹 XPath and CSS Selectors are powerful ways to locate elements when ID, Name, or ClassName are not available.
 
 1️⃣ XPath Basics

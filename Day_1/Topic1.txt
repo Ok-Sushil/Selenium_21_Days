@@ -1,5 +1,6 @@
 Topic 1: Selenium WebDriver Overview & Setup
 Subtopic a: What is Selenium?
+-------------------------------------------------------------------------------------------------------------------------
 🔹 Selenium is an open-source automation testing tool used to automate web applications.
 🔹 Selenium WebDriver is the main component that interacts with web browsers like Chrome, Firefox, Edge, Safari, etc.
 🔹 Why use Selenium?
@@ -12,7 +13,9 @@ Supports different browsers.
 Opens and controls browsers.
 Finds and interacts with web elements (buttons, links, input fields, etc.).
 Automates form filling, clicking buttons, scrolling pages, etc.
+
 Subtopic b: Browser Drivers Setup (ChromeDriver & GeckoDriver)
+------------------------------------------------------------------------------------------------------------------------
 Selenium needs Browser Drivers to interact with web browsers.
 
 🔹 ChromeDriver Setup (For Chrome Browser)
@@ -31,7 +34,11 @@ WebDriver driver = new ChromeDriver();
 
 System.setProperty("webdriver.gecko.driver", "C:\\webdriver\\geckodriver.exe");
 WebDriver driver = new FirefoxDriver();
+
+
+
 Subtopic c: Environment Setup – Creating a Selenium Project
+--------------------------------------------------------------------------------------------------------------------------------------
 ✅ Step 1: Install Java & IDE (Already Done 🎉)
 ✅ Step 2: Add Selenium JARs or Dependencies
 
