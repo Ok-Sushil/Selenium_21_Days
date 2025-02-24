@@ -1,0 +1,115 @@
+Topic 2: Basic Commands & Element Locators
+Subtopic a: Browser Launch & URL Navigation
+🔹 Example: Opening a browser and navigating to Google
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class OpenBrowser {
+    public static void main(String[] args) {
+        // Set ChromeDriver path
+        System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+
+        // Create WebDriver instance
+        WebDriver driver = new ChromeDriver();
+
+        // Open Google
+        driver.get("https://www.google.com");
+
+        // Print the title of the page
+        System.out.println("Page Title: " + driver.getTitle());
+
+        // Close browser
+        driver.quit();
+    }
+}
+
+✅ Commands Used:
+
+System.setProperty(...) → Sets the ChromeDriver path.
+WebDriver driver = new ChromeDriver(); → Opens Chrome browser.
+driver.get("URL"); → Opens the specified website.
+driver.getTitle(); → Retrieves the page title.
+driver.quit(); → Closes the browser.
+Subtopic b: Element Locators – ID, Name, ClassName
+Selenium needs locators to find elements on a webpage.
+
+🔹 Basic Locators in Selenium:
+
+Locator	Syntax	Example
+ID	    By.id("idValue")	driver.findElement(By.id("username"))
+Name	By.name("nameValue")	driver.findElement(By.name("email"))
+Class	By.className("classValue")	driver.findElement(By.className("btn-primary"))
+
+🔹 Example: Finding Elements by ID & Name
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LocatorsExample {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        
+        driver.get("https://www.example.com");
+
+        // Find element by ID and enter text
+        WebElement username = driver.findElement(By.id("username"));
+        username.sendKeys("testuser");
+
+        // Find element by Name and enter text
+        WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("mypassword");
+
+        driver.quit();
+    }
+}
+
+
+✅ Explanation:
+
+findElement(By.id("username")) → Finds an input field using ID.
+sendKeys("testuser") → Enters text into the input field.
+Subtopic c: Introduction to XPath & CSS Selectors
+🔹 XPath and CSS Selectors are powerful ways to locate elements when ID, Name, or ClassName are not available.
+
+1️⃣ XPath Basics
+✅ Syntax:
+
+driver.findElement(By.xpath("//tag[@attribute='value']"));
+✅ Example: Finding Elements using XPath
+
+WebElement loginButton = driver.findElement(By.xpath("//button[@id='login']"));
+loginButton.click();
+✅ XPath Variations:
+
+XPath Type	Example	Explanation
+Absolute XPath	/html/body/div/form/input	Starts from root (/) – Not recommended.
+Relative XPath	//input[@id='username']	Starts from anywhere in the page.
+Contains	//button[contains(text(),'Login')]	Finds elements that partially match text.
+AND / OR	//input[@type='text' and @name='email']	Finds an element with both conditions.
+2️⃣ CSS Selectors Basics
+✅ Syntax:
+
+driver.findElement(By.cssSelector("tag#id"));
+driver.findElement(By.cssSelector("tag.class"));
+✅ Example: Finding Elements using CSS Selectors
+
+WebElement searchBox = driver.findElement(By.cssSelector("input#search"));
+searchBox.sendKeys("Selenium");
+✅ CSS Selector Variations:
+
+CSS Selector	Example	Explanation
+ID	#username	Selects element with id="username"
+Class	.login-btn	Selects element with class="login-btn"
+Tag & Class	input.textbox	Selects <input> elements with class textbox
+Attribute	input[type='text']	Selects <input> elements of type text
+✅ Summary of What You Learned Today:
+✔ Selenium WebDriver overview and role.
+✔ Browser Driver setup for Chrome & Firefox.
+✔ Created a Selenium project and added dependencies.
+✔ Opened a browser & navigated to a URL.
+✔ Used Locators (ID, Name, ClassName) to find elements.
+✔ Learned XPath & CSS Selectors for advanced element finding.
